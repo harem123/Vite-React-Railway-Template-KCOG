@@ -8,7 +8,36 @@ Typography,} from "@material-ui/core"
 import { createTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 function App() {
+  
+  
   const [isDark, setIsDark] = useState(false)
+  const themeLight = createTheme({
+    palette: {
+      background: {
+        default: "#e4f0e2"
+      }
+    }
+  });
+  
+  const themeDark = createTheme({
+    palette: {
+      background: {
+        default: "#222222",
+        paper:"#141b2d"
+      },
+      text: {
+        primary: "#ffffff"
+      },
+      primary:{
+        main: "#4cceac",
+        
+      },
+      secondary:{
+        main:"#70d8bd",
+        
+      },
+    }
+  });
   const theme = createTheme({
     palette:{
       type: isDark ? "dark" : "light",
@@ -24,7 +53,7 @@ function App() {
     }
   })
   return (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={isDark ? themeLight : themeDark}>
     <CssBaseline />
    <Paper style= {{height: '100vh', display: 'flex',
                     flexDirection:'column', justifyContent:'center'
