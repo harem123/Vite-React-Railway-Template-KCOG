@@ -23,8 +23,8 @@ function App() {
   const themeDark = createTheme({
     palette: {
       background: {
-        default: "#222222",
-        paper:"#141b2d"
+      paper:"#141b2d"
+        
       },
       text: {
         primary: "#ffffff"
@@ -39,20 +39,7 @@ function App() {
       },
     }
   });
-  const theme = createTheme({
-    palette:{
-      type: isDark ? "dark" : "light",
-      primary:{
-        main: "#141b2d",
-        
-      },
-      secondary:{
-        main:"#70d8bd",
-        
-      },
-      
-    }
-  })
+  
   return (
   <ThemeProvider theme={isDark ? themeLight : themeDark}>
     <CssBaseline />
@@ -70,7 +57,7 @@ function App() {
         <Button variant='contained' color='secondary'>Button 2</Button>
       </div>
       <Card  sx={{ 
-        maxWidth: 345 ,backgroundColor: "red" }}  >
+        maxWidth: 345 ,background: "red" }}  >
       <CardMedia
         component="img"
         alt="dev image"
