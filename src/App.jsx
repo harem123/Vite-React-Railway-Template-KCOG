@@ -4,7 +4,8 @@ Button,
 Paper,
 Switch,
 ThemeProvider,
-Typography,} from "@material-ui/core"
+Typography,Card,CardActions,CardContent,CardMedia} from "@material-ui/core"
+
 import { createTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 function App() {
@@ -68,6 +69,27 @@ function App() {
         <Button variant='contained' color='primary'  >Button 1</Button>
         <Button variant='contained' color='secondary'>Button 2</Button>
       </div>
+      <Card  sx={{ 
+        maxWidth: 345 ,backgroundColor: "red" }}  >
+      <CardMedia
+        component="img"
+        alt="dev image"
+        height="140"
+        image="/static/images/cards/contemplative-reptile.jpg"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          titutlo aqui
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+         informacion aqui
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+    </Card>
     </Paper>
   </ThemeProvider>
   )
